@@ -199,25 +199,26 @@ O projeto utiliza apenas bibliotecas nativas do .NET:
 
 ### Pré-requisitos
 
-- .NET Framework 4.7.2 ou superior (ou .NET Core/5+)
+- .NET Core 8+ instalado  (ou .NET Core/5+)
 - Visual Studio 2019+ ou Visual Studio Code
 - Firewall configurado para permitir tráfego UDP na porta 5000
 
 ### Configuração do Projeto
 
-1. **Criar o Projeto**
+1. **Clone o projeto localmente
 
    ```bash
-   dotnet new console -n UdpMulticastChat
-   cd UdpMulticastChat
+   git clone https://github.com/aulasrede/praticaudp.git
+
    ```
 
-2. **Criar a Estrutura de Pastas**
-
-   - Crie a pasta `Models` dentro do projeto
-   - Adicione todos os arquivos .cs (já implementados no workspace)
-
-3. **Compilar o Projeto**
+2. **Navegue até o codigo fonte do projeto**
+   
+   ```bash
+   cd praticaudp/src
+   ```
+   
+4. **Compilar o Projeto**
 
    ```bash
    dotnet build
