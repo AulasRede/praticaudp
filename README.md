@@ -278,10 +278,13 @@ Para testar em computadores diferentes na mesma rede:
 
 1. Certifique-se de que ambos estão na mesma sub-rede
 2. Verifique se o firewall permite tráfego UDP na porta 5000
-3. No Windows, pode ser necessário criar uma regra no firewall:
+3. No Windows, pode ser necessário criar uma regra no firewall (exige elevação de privilégio):
 
    ```powershell
-   netsh advfirewall firewall add rule name="UDP Chat" dir=in action=allow protocol=UDP localport=5000
+   
+   netsh advfirewall firewall add rule name="UDP Chat In"  dir=in  action=allow protocol=UDP localport=5000
+   netsh advfirewall firewall add rule name="UDP Chat Out" dir=out action=allow protocol=UDP localport=5000
+
    ```
 
 ### Observações Importantes
