@@ -293,68 +293,11 @@ Para testar em computadores diferentes na mesma rede:
 - Este comportamento é intencional e demonstra as características do UDP
 
 **Limitações Demonstrativas:**
-
 - O chat não persiste histórico
 - Não há autenticação de usuários
 - Não há criptografia (mensagens em texto claro)
 - Limitado a redes locais (dependendo do TTL)
 
-
-## Exercícios de Validação
-
-### Questões Teóricas
-
-**1. Fundamentos do UDP**
-
-a) Explique por que o UDP é considerado um protocolo "não confiável". Isso significa que ele não funciona corretamente?
-
-b) Descreva as quatro informações contidas no cabeçalho UDP e explique a função de cada uma.
-
-c) Por que o cabeçalho UDP é significativamente menor que o cabeçalho TCP?
-
-**2. Comparação UDP vs TCP**
-
-a) Liste três cenários onde o UDP seria preferível ao TCP e justifique cada escolha.
-
-b) Por que o TCP não é adequado para aplicações de jogos online em tempo real?
-
-c) Explique o conceito de "handshake de três vias" do TCP e por que o UDP não precisa disso.
-
-**3. Multicast**
-
-a) Qual é a diferença entre unicast, broadcast e multicast?
-
-b) Explique o que significa "entrar em um grupo multicast" (join operation).
-
-c) Por que o multicast é mais eficiente em termos de banda do que enviar mensagens individuais para cada destinatário?
-
-d) Qual é a faixa de endereços IP reservada para multicast IPv4?
-
-**4. Análise da Aplicação**
-
-a) No código do chat, por que é necessário usar `ReuseAddress` no socket?
-
-b) O que aconteceria se aumentássemos o TTL (Time To Live) do multicast para 255?
-
-c) Por que a aplicação usa JSON para serializar as mensagens em vez de enviar texto puro?
-
-### Questões Práticas
-
-**5. Experimentos com o Chat**
-
-a) Execute três instâncias do chat e envie mensagens. As mensagens sempre chegam na mesma ordem em todas as instâncias? Por quê?
-
-b) Feche uma instância do chat abruptamente (sem digitar "sair"). O que acontece com as outras instâncias? Por quê?
-
-c) Tente enviar uma mensagem muito longa (mais de 8KB). O que acontece? Como você poderia modificar o código para lidar com isso?
-
-**6. Modificações no Código**
-
-a) Como você modificaria o código para adicionar um limite de caracteres por mensagem?
-
-b) Implemente uma funcionalidade que permita enviar mensagens privadas para um usuário específico (dica: você precisará de mais de um grupo multicast).
-
-c) Adicione um contador de mensagens perdidas. Como você detectaria que uma mensagem foi perdida no UDP?
 
 
 ## Referências
